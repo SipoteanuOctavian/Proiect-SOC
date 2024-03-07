@@ -1,0 +1,301 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V6.11.1.50453 for Atmel AVR       18/Jan/2024  20:33:09 /
+// Copyright 1996-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Source file  =  D:\1307A\soc-p\proiect\main.c                           /
+//    Command line =  D:\1307A\soc-p\proiect\main.c --cpu=m16 -ms -o          /
+//                    D:\1307A\soc-p\proiect\Debug\Obj\ -lC                   /
+//                    D:\1307A\soc-p\proiect\Debug\List\ -lA                  /
+//                    D:\1307A\soc-p\proiect\Debug\List\                      /
+//                    --initializers_in_flash --no_cse --no_inline            /
+//                    --no_code_motion --no_cross_call --no_clustering        /
+//                    --no_tbaa --debug -DENABLE_BIT_DEFINITIONS -e           /
+//                    --eeprom_size 512 --clib -On                            /
+//    List file    =  D:\1307A\soc-p\proiect\Debug\List\main.s90              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME main
+
+        RTMODEL "__64bit_doubles", "disabled"
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__cpu", "3"
+        RTMODEL "__cpu_name", "ATmega16"
+        RTMODEL "__enhanced_core", "enabled"
+        RTMODEL "__has_elpm", "false"
+        RTMODEL "__memory_model", "2"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:NOROOT(0)
+        RSEG RSTACK:DATA:NOROOT(0)
+
+        EXTERN ?need_segment_init
+
+        PUBWEAK `?<Segment init: NEAR_Z>`
+        PUBWEAK _A_DDRB
+        PUBWEAK _A_DDRD
+        PUBWEAK _A_TCCR1B
+        PUBWEAK _A_TCNT1
+        PUBWEAK __?EEARH
+        PUBWEAK __?EEARL
+        PUBWEAK __?EECR
+        PUBWEAK __?EEDR
+        PUBLIC iesire_automat
+        PUBLIC intrare_automat
+        PUBLIC main
+        FUNCTION main,021a03H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME RSTACK, 2, STACK
+        PUBLIC stare_automat
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_Y Y DATA
+          CFI StackFrame CFA_SP SP DATA
+          CFI VirtualResource ?RetPad:1, ?RetHigh:8, ?RetLow:8, ?Ret:17
+          CFI Resource R0:8, R1:8, R2:8, R3:8, R4:8, R5:8, R6:8, R7:8, R8:8, R9:8
+          CFI Resource R10:8, R11:8, R12:8, R13:8, R14:8, R15:8, R16:8, R17:8
+          CFI Resource R18:8, R19:8, R20:8, R21:8, R22:8, R23:8, R24:8, R25:8
+          CFI Resource R26:8, R27:8, R28:8, R29:8, R30:8, R31:8
+          CFI Resource ?RetHighByteMask:8, SP:16, SPH:8, SPL:8, Y:16
+          CFI ResourceParts ?Ret ?RetHigh, ?RetLow, ?RetPad
+          CFI ResourceParts SP SPH, SPL
+          CFI ResourceParts Y R29, R28
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign 1
+          CFI ReturnAddress ?Ret CODE
+          CFI CFA_Y Y+0
+          CFI CFA_SP SP+2
+          CFI ?RetPad 0
+          CFI ?RetHigh and(load(1, DATA, sub(CFA_SP, 1)), ?RetHighByteMask)
+          CFI ?RetLow Frame(CFA_SP, 0)
+          CFI ?Ret Concat
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 SameValue
+          CFI R5 SameValue
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI R8 SameValue
+          CFI R9 SameValue
+          CFI R10 SameValue
+          CFI R11 SameValue
+          CFI R12 SameValue
+          CFI R13 SameValue
+          CFI R14 SameValue
+          CFI R15 SameValue
+          CFI R16 Undefined
+          CFI R17 Undefined
+          CFI R18 Undefined
+          CFI R19 Undefined
+          CFI R20 Undefined
+          CFI R21 Undefined
+          CFI R22 Undefined
+          CFI R23 Undefined
+          CFI R24 SameValue
+          CFI R25 SameValue
+          CFI R26 SameValue
+          CFI R27 SameValue
+          CFI R28 Undefined
+          CFI R29 Undefined
+          CFI R30 Undefined
+          CFI R31 Undefined
+          CFI ?RetHighByteMask SameValue
+          CFI SPH Undefined
+          CFI SPL Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN beculet
+        FUNCTION beculet,0202H
+        ARGFRAME RSTACK, 0, STACK
+        EXTERN initializare
+        FUNCTION initializare,0202H
+        ARGFRAME RSTACK, 0, STACK
+
+// D:\1307A\soc-p\proiect\main.c
+//    1 #include <inavr.h> 
+//    2 #include <iom16.h>
+
+        ASEGN ABSOLUTE:DATA:NOROOT,04eH
+// union <unnamed> volatile __io _A_TCCR1B
+_A_TCCR1B:
+        DS8 1
+
+        ASEGN ABSOLUTE:DATA:NOROOT,04cH
+// union <unnamed> volatile __io _A_TCNT1
+_A_TCNT1:
+        DS8 2
+
+        ASEGN ABSOLUTE:DATA:NOROOT,037H
+// union <unnamed> volatile __io _A_DDRB
+_A_DDRB:
+        DS8 1
+
+        ASEGN ABSOLUTE:DATA:NOROOT,031H
+// union <unnamed> volatile __io _A_DDRD
+_A_DDRD:
+        DS8 1
+//    3 
+
+        RSEG NEAR_Z:DATA:NOROOT(0)
+        REQUIRE `?<Segment init: NEAR_Z>`
+//    4 unsigned char intrare_automat=0;
+intrare_automat:
+        DS8 1
+
+        RSEG NEAR_Z:DATA:NOROOT(0)
+        REQUIRE `?<Segment init: NEAR_Z>`
+//    5 unsigned short iesire_automat=0;
+iesire_automat:
+        DS8 2
+
+        RSEG NEAR_Z:DATA:NOROOT(0)
+        REQUIRE `?<Segment init: NEAR_Z>`
+//    6 unsigned char stare_automat=0;
+stare_automat:
+        DS8 1
+//    7 
+//    8 extern void initializare(void);/* Prototipul functiei ASM */
+//    9 extern void c_intrerupere();
+//   10 extern void ext_intrerupere();
+//   11 extern void beculet(unsigned char luminozitate);
+//   12 
+
+        RSEG CODE:CODE:NOROOT(1)
+//   13 void main(void)
+main:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function main
+//   14 {
+//   15   DDRD = 0x80;/* Initializeaza porturile de I/O*/
+        FUNCALL main, initializare
+        LOCFRAME CSTACK, 0, STACK
+        LOCFRAME RSTACK, 2, STACK
+        ARGFRAME RSTACK, 0, STACK
+        FUNCALL main, beculet
+        LOCFRAME CSTACK, 0, STACK
+        LOCFRAME RSTACK, 2, STACK
+        ARGFRAME RSTACK, 0, STACK
+        LDI     R16, 128
+        OUT     0x11, R16
+//   16   DDRB = 0xFF;
+        LDI     R16, 255
+        OUT     0x17, R16
+//   17   initializare();
+        CALL    initializare
+//   18   
+//   19   __enable_interrupt();
+        SEI
+//   20   while(1)/* Bucla infinit?*/ 
+//   21   {	
+//   22     switch(stare_automat)
+??main_0:
+        LDS     R16, stare_automat
+        SUBI    R16, 0
+        BREQ    ??main_1
+        DEC     R16
+        BREQ    ??main_2
+        RJMP    ??main_3
+//   23     {
+//   24     case 0://starea 0, astept semnal de la senzor
+//   25       {
+//   26         if(intrare_automat==1)//am primit semnalul de la senzor
+??main_1:
+        LDS     R16, intrare_automat
+        CPI     R16, 1
+        BRNE    ??main_3
+//   27 	{
+//   28 	  TCNT1=0;
+        LDI     R16, 0
+        LDI     R17, 0
+        OUT     0x2D, R17
+        OUT     0x2C, R16
+//   29 	  stare_automat=1;
+        LDI     R16, 1
+        STS     stare_automat, R16
+//   30 	  TCCR1B = (1<<CS11)|(1<<CS10)|(0<<ICES1);
+        LDI     R16, 3
+        OUT     0x2E, R16
+//   31 	}
+//   32 	break;
+        RJMP    ??main_3
+//   33       }
+//   34       
+//   35       
+//   36     case 1://starea 1, sunt in semnal si astept sfarsitul lui
+//   37       {
+//   38         if(intrare_automat==0)//s-a terminat semnalul de la senzor
+??main_2:
+        LDS     R16, intrare_automat
+        TST     R16
+        BRNE    ??main_3
+//   39         {
+//   40           iesire_automat= TCNT1;//salvez valoarea din timer
+        IN      R16, 0x2C
+        IN      R17, 0x2D
+        STS     iesire_automat, R16
+        STS     (iesire_automat + 1), R17
+//   41           stare_automat=0;
+        LDI     R16, 0
+        STS     stare_automat, R16
+//   42           TCCR1B = (1<<CS11)|(1<<CS10)|(1<<ICES1);
+        LDI     R16, 67
+        OUT     0x2E, R16
+//   43         }
+//   44         
+//   45 	break;
+//   46 	
+//   47       }
+//   48     }
+//   49     
+//   50     beculet(iesire_automat);
+??main_3:
+        LDS     R16, iesire_automat
+        LDS     R17, (iesire_automat + 1)
+        CALL    beculet
+        RJMP    ??main_0
+          CFI EndBlock cfiBlock0
+        REQUIRE _A_DDRD
+        REQUIRE _A_DDRB
+        REQUIRE _A_TCNT1
+        REQUIRE _A_TCCR1B
+//   51   }
+//   52 }
+
+        ASEGN ABSOLUTE:DATA:NOROOT,01cH
+__?EECR:
+
+        ASEGN ABSOLUTE:DATA:NOROOT,01dH
+__?EEDR:
+
+        ASEGN ABSOLUTE:DATA:NOROOT,01eH
+__?EEARL:
+
+        ASEGN ABSOLUTE:DATA:NOROOT,01fH
+__?EEARH:
+
+        RSEG INITTAB:CODE:NOROOT(0)
+`?<Segment init: NEAR_Z>`:
+        DC16    SFE(NEAR_Z) - SFB(NEAR_Z)
+        DC16    SFB(NEAR_Z)
+        DC16    0
+        REQUIRE ?need_segment_init
+
+        END
+// 
+//   5 bytes in segment ABSOLUTE
+// 100 bytes in segment CODE
+//   6 bytes in segment INITTAB
+//   4 bytes in segment NEAR_Z
+// 
+// 100 bytes of CODE memory (+ 6 bytes shared)
+//   4 bytes of DATA memory (+ 5 bytes shared)
+//
+//Errors: none
+//Warnings: none
